@@ -1,0 +1,8 @@
+- id: shuffle
+  name: "Shuffle"
+  metadata:
+    description: "Adds a shuffle button and autoplay queue of similar scenes. On performer, studio, or tag pages, the initial scene is chosen from that page."
+  version: "3.0.0"
+  date: "2026-10-09 18:15:24"
+  path: shuffle.zip
+  sha256: 919c879dcc4a82098b30bd0bf85cb9846ee6e0a12e4bece6fd513f8e6b01082b
