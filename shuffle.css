@@ -1,0 +1,182 @@
+/* ─── Shuffle Plugin Styles ─────────────────────────────────────────────── */
+
+/* ── Navbar button ── */
+.shuffle-plugin-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  margin-left: 4px;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  vertical-align: middle;
+}
+.shuffle-plugin-button:hover:not(:disabled) { transform: scale(1.15) rotate(-10deg); }
+.shuffle-plugin-button:active:not(:disabled) { transform: scale(0.95); }
+.shuffle-plugin-button:disabled { cursor: wait; opacity: 0.6; }
+.shuffle-plugin-button .shuffle-icon { font-size: 1rem; display: inline-block; }
+
+/* ── Queue panel ── */
+.shuffle-panel {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 340px;
+  max-width: calc(100vw - 32px);
+  background: #1e2930;
+  border: 1px solid #394b59;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: #f5f8fa;
+  overflow: hidden;
+}
+
+/* ── Panel header ── */
+.shuffle-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: #2d3f4f;
+  border-bottom: 1px solid #394b59;
+  user-select: none;
+}
+.shuffle-panel-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+}
+.shuffle-panel-controls {
+  display: flex;
+  gap: 4px;
+}
+
+/* ── Control buttons ── */
+.shuffle-ctrl-btn {
+  background: transparent;
+  border: 1px solid #4a6070;
+  border-radius: 4px;
+  color: #b0bec5;
+  cursor: pointer;
+  font-size: 0.85rem;
+  line-height: 1;
+  padding: 3px 7px;
+  transition: background 0.12s, color 0.12s;
+}
+.shuffle-ctrl-btn:hover { background: #394b59; color: #fff; }
+.shuffle-stop-btn:hover { background: #c0392b; border-color: #c0392b; color: #fff; }
+
+/* ── Collapsed state ── */
+.shuffle-collapsed .shuffle-panel-body { display: none; }
+
+/* ── Panel body ── */
+.shuffle-panel-body {
+  max-height: 360px;
+  overflow-y: auto;
+  padding: 6px 0;
+  scrollbar-width: thin;
+  scrollbar-color: #394b59 transparent;
+}
+.shuffle-panel-body::-webkit-scrollbar { width: 5px; }
+.shuffle-panel-body::-webkit-scrollbar-track { background: transparent; }
+.shuffle-panel-body::-webkit-scrollbar-thumb { background: #394b59; border-radius: 3px; }
+
+/* ── Loading state ── */
+.shuffle-loading {
+  padding: 20px 16px;
+  color: #8fa8be;
+  text-align: center;
+  font-style: italic;
+}
+
+/* ── Queue items ── */
+.shuffle-queue-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 12px;
+  border-bottom: 1px solid #2d3f4f;
+  transition: background 0.12s;
+  min-height: 58px;
+}
+.shuffle-queue-item:last-of-type { border-bottom: none; }
+.shuffle-queue-item:hover:not(.shuffle-current) { background: #2d3f4f; }
+
+.shuffle-current {
+  background: #1a3a5c;
+  border-left: 3px solid #137cbd;
+  padding-left: 9px;
+}
+
+/* ── Thumbnail ── */
+.shuffle-queue-thumb {
+  width: 72px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+  background: #0e1f2b;
+}
+.shuffle-thumb-placeholder {
+  width: 72px;
+  height: 44px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  background: #0e1f2b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #4a6070;
+}
+
+/* ── Item info ── */
+.shuffle-queue-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.shuffle-queue-badge {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #8fa8be;
+  font-weight: 500;
+}
+.shuffle-badge-now {
+  color: #48aff0;
+}
+.shuffle-queue-title {
+  font-size: 0.82rem;
+  color: #e1e8ed;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.3;
+}
+
+/* ── Remaining count ── */
+.shuffle-remaining {
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  color: #637888;
+  text-align: center;
+  font-style: italic;
+}
+
+/* ── Mobile adjustments ── */
+@media (max-width: 575.98px) {
+  .shuffle-panel {
+    bottom: 80px; /* clear the bottom navbar on mobile */
+    right: 12px;
+    width: calc(100vw - 24px);
+  }
+}

@@ -1,0 +1,9 @@
+name: Shuffle
+description: Adds a shuffle button and autoplay queue of similar scenes. On performer, studio, or tag pages, the initial scene is chosen from that page.
+version: 3.0.0
+url: https://github.com/StonyTark1117/stash-shuffle-autoplay
+ui:
+  javascript:
+    - shuffle.js
+  css:
+    - shuffle.css
